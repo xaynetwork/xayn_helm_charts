@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name:  {{ .Release.Name }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      # Here the /nginx-health will be above the location / and will return 200 since in the / location we have a header verification.
+      location = /nginx-health {
+        return 200 "healthy\n";
+      }
+    nginx.ingress.kubernetes.io/server-alias: "{{ .Values.host }}"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "*"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+
+spec:
+  tls:
+    - hosts:
+        -  {{ .Values.host }}
+      secretName: xayn-discovery-web-tls
+  rules:
+    - host:  {{ .Values.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name:  {{ .Release.Name }}
+                port:
+                  number: {{ .Values.container.port }}

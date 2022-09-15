@@ -1,0 +1,7 @@
+host: discovery-web-test-helm.xayn.com
+container:
+  image: xaynetci/xayn_discovery_web_service:zdf
+  port: 3000
+  secrets:
+    - name: password
+      value: ${SOME_ENV}
