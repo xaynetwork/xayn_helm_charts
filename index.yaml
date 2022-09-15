@@ -3,13 +3,13 @@ entries:
   quick-docker:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-15T14:19:35.88273185Z"
+    created: "2022-09-15T14:34:49.719894874Z"
     description: Creates all the config files for deploying a simple docker container
       to the provided cluster
-    digest: afa4a9db89072ed27be1d42013ec8c69bfae33573a7ae7fb5a4ce40804c11e4e
+    digest: 27e31e4edf714336f9fcce1615964e19876f1397bb5395e62b043fe5834f5fdd
     name: quick-docker
     type: application
     urls:
     - quick-docker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-15T14:19:35.882156561Z"
+generated: "2022-09-15T14:34:49.719217142Z"
