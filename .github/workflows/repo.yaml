@@ -28,7 +28,7 @@ jobs:
         run: helm package charts/*
       
       - name: Create Index
-        run: helm repo index charts/*
+        run: helm repo index .
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
