@@ -1,0 +1,37 @@
+name: Helm Chart Repo deployment
+
+on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
+  push:
+    branches: [main]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    # Allow this job to push changes to your repository
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out your repository using git
+        uses: actions/checkout@v2
+
+      - name: Lint 
+        working-directory: charts
+        run: helm lint *
+      
+      - name: Package
+        run: helm package charts/*
+      
+      - name: Create Index
+        run: helm repo index charts/*
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
