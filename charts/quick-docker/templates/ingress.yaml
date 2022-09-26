@@ -19,7 +19,7 @@ spec:
   tls:
     - hosts:
         -  {{ .Values.host }}
-      secretName: xayn-discovery-web-tls
+      secretName: {{ .Release.Name }}-tls
   rules:
     - host:  {{ .Values.host }}
       http:
