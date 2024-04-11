@@ -38,8 +38,8 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           imagePullSecrets:
           {{- if .Values.image.imagePullSecrets }}
-          {{- range $key := .Values.image.imagePullSecrets }}
-          - name: {{ $key | quote }}
+          {{- range .Values.image.imagePullSecrets }}
+          - name: {{ .name }}
           {{- end }}
           {{- end }}
           env:
