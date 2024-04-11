@@ -3,9 +3,9 @@ entries:
   base-gcp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-04-11T09:20:00.895908334Z"
+    created: "2024-04-11T11:21:59.515363369Z"
     description: A base helm with some gcp features
-    digest: 006743ac2fbdd0dbb20ef369c4cdc33e7894553843242eab1ea3969ce5b9d794
+    digest: f4e8c797eed7ee59d03cc63f86fb10b588663525ce4e8d2040766cfed459aad8
     name: base-gcp
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   base-otc:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-04-11T09:20:00.896212482Z"
+    created: "2024-04-11T11:21:59.515667861Z"
     description: A Helm chart for deploying in the OTC cloud
-    digest: 7701c217aa297d199c338c851437d758d8f6fab1a7fc32cc3d59a1961ba5b181
+    digest: c47b920c0db27507e9854e08727a602e8070e44a1ef8c598f444298335193da2
     name: base-otc
     type: application
     urls:
@@ -25,13 +25,13 @@ entries:
   quick-docker:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-04-11T09:20:00.896386417Z"
+    created: "2024-04-11T11:21:59.515867485Z"
     description: Creates all the config files for deploying a simple docker container
       to the provided cluster
-    digest: 0b83fa413272084ecec2fd365029bd7e6b498ae7cee33ee1efd3dbfe808fa31b
+    digest: 7cf346c9deeb46a00e4fc3871efbdc2d9fb552cac82b86e2641a871448d16919
     name: quick-docker
     type: application
     urls:
     - quick-docker-0.1.1.tgz
     version: 0.1.1
-generated: "2024-04-11T09:20:00.895406677Z"
+generated: "2024-04-11T11:21:59.514892406Z"
