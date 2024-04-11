@@ -30,7 +30,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "base-otc.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "base-otc.name" . }}
+app.kubernetes.io/name: {{ include "base-otc.fullname" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
