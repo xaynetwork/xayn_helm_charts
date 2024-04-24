@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "vllm-otc.fullname" . }}
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 1000Gi
+  csi:
+    driver: sfsturbo.csi.everest.io
+    fsType: nfs
+    volumeAttributes:
+      everest.io/crypt-key-id: {{ .Values.pv.cryptKeyID }}
+      everest.io/share-export-location: {{ .Values.pv.exportLocation }}
+      storage.kubernetes.io/csiProvisionerIdentity: everest-csi-provisioner
+    volumeHandle: {{ .Values.pv.volumeID }}
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: csi-sfsturbo
+  volumeMode: Filesystem

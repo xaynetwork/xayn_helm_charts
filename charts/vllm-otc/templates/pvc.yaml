@@ -1,0 +1,29 @@
+{{/*apiVersion: v1*/}}
+{{/*kind: PersistentVolumeClaim*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    volume.beta.kubernetes.io/storage-class: obs-standard  # OBS bucket type. The value can be obs-standard (standard) or obs-standard-ia (infrequent access).*/}}
+{{/*  name: {{ include "vllm-otc.fullname" . }}*/}}
+{{/*spec:*/}}
+{{/*  accessModes:*/}}
+{{/*  - ReadWriteMany*/}}
+{{/*  resources:*/}}
+{{/*    requests:*/}}
+{{/*      storage: 100Gi   # Storage capacity in the unit of Gi. For OBS buckets, this parameter is used only for verification (fixed to 1, cannot be empty or 0). Any value you set does not take effect for OBS buckets.*/}}
+{{/*#  storageClassName: obs-standard*/}}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "vllm-otc.fullname" . }}
+  annotations:
+    everest.io/crypt-key-id: {{ .Values.pvc.cryptKeyID }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1000Gi
+  storageClassName: csi-sfsturbo
+  volumeMode: Filesystem
+  volumeName: {{ include "vllm-otc.fullname" . }}

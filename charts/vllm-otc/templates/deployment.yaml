@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "vllm-otc.fullname" . }}
+  labels:
+    {{- include "vllm-otc.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "vllm-otc.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "vllm-otc.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      hostIPC: true
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "vllm-otc.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          args: [
+            "--model={{ .Values.modelName }}",
+            "--tensor-parallel-size={{ .Values.gpus }}",
+            {{- range $value := .Values.extraArgs }}
+            "{{ $value }}",
+            {{- end }}
+          ]
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          resources:
+            limits:
+              "nvidia.com/gpu": {{ .Values.gpus }}
+          volumeMounts:
+            - name: huggingface-cache
+              mountPath: /root/.cache/huggingface/hub/
+              readOnly: true
+            - name: shm
+              mountPath: /dev/shm
+      volumes:
+        - name: huggingface-cache
+          persistentVolumeClaim:
+            claimName: {{ include "vllm-otc.fullname" . }}
+        - name: shm
+          emptyDir:
+            medium: Memory
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
