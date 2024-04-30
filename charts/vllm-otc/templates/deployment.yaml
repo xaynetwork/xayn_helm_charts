@@ -6,6 +6,8 @@ metadata:
     {{- include "vllm-otc.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       {{- include "vllm-otc.selectorLabels" . | nindent 6 }}
@@ -35,7 +37,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           args: [
-            "--model={{ .Values.modelName }}",
+            "--model=/models/{{ .Values.modelName }}",
             "--tensor-parallel-size={{ .Values.gpus }}",
             {{- range $value := .Values.extraArgs }}
             "{{ $value }}",
@@ -48,10 +50,10 @@ spec:
               protocol: TCP
           resources:
             limits:
-              "nvidia.com/gpu": {{ .Values.gpus }}
+              "nvidia.com/gpu": "{{ .Values.gpus }}"
           volumeMounts:
             - name: huggingface-cache
-              mountPath: /root/.cache/huggingface/hub/
+              mountPath: /models
               readOnly: true
             - name: shm
               mountPath: /dev/shm
