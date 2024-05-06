@@ -52,9 +52,9 @@ spec:
             limits:
               "nvidia.com/gpu": "{{ .Values.gpus }}"
           livenessProbe:
-{{ toYaml .Values.livenessProbe | indent 10 }}
+{{ toYaml .Values.livenessProbe | indent 12 }}
           startupProbe:
-{{ toYaml .Values.startupProbe | indent 10 }}
+{{ toYaml .Values.startupProbe | indent 12 }}
           volumeMounts:
             - name: huggingface-cache
               mountPath: /models
