@@ -9,6 +9,9 @@ image:
   # repository: nginx
   pullPolicy: IfNotPresent
 
+preJob:
+  enabled: false
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
