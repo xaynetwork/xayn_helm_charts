@@ -1,4 +1,4 @@
-{{- if .Values.preJob.enable }}
+# {{- if .Values.preJob.enable }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -31,4 +31,4 @@ spec:
           value: {{ $value | quote }}
         {{- end }}
         {{- end }}
-{{- end }}
+# {{- end }}
