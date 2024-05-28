@@ -1,4 +1,4 @@
-# {{- if .Values.preJob.enable }}
+{{- if .Values.preJob.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -11,7 +11,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: "preJob"
+      name: "pre-job"
       labels:
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
         app.kubernetes.io/instance: {{ .Release.Name | quote }}
@@ -22,7 +22,7 @@ spec:
         {{- end }}
       restartPolicy: Never
       containers:
-      - name: "preJob-container"
+      - name: "pre-job-container"
         image: "{{ .Values.preJob.image }}"
         env:
         {{- if .Values.preJob.env }}
@@ -31,4 +31,4 @@ spec:
           value: {{ $value | quote }}
         {{- end }}
         {{- end }}
-# {{- end }}
+{{- end }}

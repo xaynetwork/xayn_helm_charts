@@ -10,7 +10,7 @@ image:
   pullPolicy: IfNotPresent
 
 preJob:
-  enable: false
+  enabled: false
 
 imagePullSecrets: []
 nameOverride: ""
