@@ -1,0 +1,34 @@
+{{- if .Values.pre_job.enable }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "pre_job"
+  labels:
+    {{- include "base-otc.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      name: "pre_job"
+      labels:
+        app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
+        app.kubernetes.io/instance: {{ .Release.Name | quote }}
+    spec:
+        {{- with .Values.imagePullSecrets }}
+        imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      restartPolicy: Never
+      containers:
+      - name: "pre_job-container"
+        image: "{{ .Values.pre_job.image }}"
+        env:
+        {{- if .Values.pre_job.env }}
+        {{- range $key, $value := .Values.pre_job.env }}
+        - name: {{ $key | quote }}
+          value: {{ $value | quote }}
+        {{- end }}
+        {{- end }}
+{{- end }}
