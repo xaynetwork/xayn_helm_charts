@@ -3,9 +3,9 @@ entries:
   base-gcp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-06T08:40:35.247702193Z"
+    created: "2024-05-28T08:42:08.433922947Z"
     description: A base helm with some gcp features
-    digest: e9ab137c9b9a3a4b8830a98c1cc128b230b573541ee80bef07d26085a0e2b05e
+    digest: f3f98b8b4166f823e4634725ebdbf83914d13fbdbf3e1072581aad9327600188
     name: base-gcp
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   base-otc:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-06T08:40:35.248023474Z"
+    created: "2024-05-28T08:42:08.434222384Z"
     description: A Helm chart for deploying in the OTC cloud
-    digest: da5b37839a7c17fc92febb0ebf4db90a2f135a84b8487774913273dbeb7cc7a3
+    digest: 1fed365612a527d9dcebc90a70b8228339d4743c44b11cba43ee6fc9220f69b2
     name: base-otc
     type: application
     urls:
@@ -25,10 +25,10 @@ entries:
   quick-docker:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-06T08:40:35.248217026Z"
+    created: "2024-05-28T08:42:08.434417907Z"
     description: Creates all the config files for deploying a simple docker container
       to the provided cluster
-    digest: 9cc67fcf3c5ba4823f0330c59995c786baa492436fdfeb54b3ad3a68e2357b44
+    digest: 2028ac6d664c55df7075dac24475cb65db070f4984d24d5c3bf767b6f753c455
     name: quick-docker
     type: application
     urls:
@@ -37,12 +37,12 @@ entries:
   vllm-otc:
   - apiVersion: v2
     appVersion: v0.4.0.post1
-    created: "2024-05-06T08:40:35.24860436Z"
+    created: "2024-05-28T08:42:08.43476863Z"
     description: A Helm chart for vLLM in OTC
-    digest: 3b58ba2910e509ea997af89380bc608e05bc13f0e387eaafb3b07dbdaa238ff7
+    digest: 5a523e8a3d240800f0b12cc65256351e3758c64abdce4184b59f05b52043017c
     name: vllm-otc
     type: application
     urls:
     - vllm-otc-0.3.1.tgz
     version: 0.3.1
-generated: "2024-05-06T08:40:35.247257222Z"
+generated: "2024-05-28T08:42:08.43348419Z"
