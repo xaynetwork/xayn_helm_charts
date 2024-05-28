@@ -1,8 +1,8 @@
-{{- if .Values.pre_job.enable }}
+{{- if .Values.preJob.enable }}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "pre_job"
+  name: "preJob"
   labels:
     {{- include "base-otc.labels" . | nindent 4 }}
   annotations:
@@ -11,7 +11,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: "pre_job"
+      name: "preJob"
       labels:
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
         app.kubernetes.io/instance: {{ .Release.Name | quote }}
@@ -22,11 +22,11 @@ spec:
         {{- end }}
       restartPolicy: Never
       containers:
-      - name: "pre_job-container"
-        image: "{{ .Values.pre_job.image }}"
+      - name: "preJob-container"
+        image: "{{ .Values.preJob.image }}"
         env:
-        {{- if .Values.pre_job.env }}
-        {{- range $key, $value := .Values.pre_job.env }}
+        {{- if .Values.preJob.env }}
+        {{- range $key, $value := .Values.preJob.env }}
         - name: {{ $key | quote }}
           value: {{ $value | quote }}
         {{- end }}

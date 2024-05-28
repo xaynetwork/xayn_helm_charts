@@ -9,7 +9,7 @@ image:
   # repository: nginx
   pullPolicy: IfNotPresent
 
-pre_job:
+preJob:
   enable: false
 
 imagePullSecrets: []
