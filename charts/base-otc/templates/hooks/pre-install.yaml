@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "preJob"
+  name: "pre-job"
   labels:
     {{- include "base-otc.labels" . | nindent 4 }}
   annotations:
