@@ -31,4 +31,10 @@ spec:
           value: {{ $value | quote }}
         {{- end }}
         {{- end }}
+        command:
+        {{- if .Values.preJob.command }}
+        {{- range .Values.preJob.command }}
+        - {{ . | quote }}
+        {{- end }}
+        {{- end }}
 {{- end }}
