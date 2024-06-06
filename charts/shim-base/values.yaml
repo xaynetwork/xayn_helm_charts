@@ -26,9 +26,19 @@ podAnnotations: {}
 podLabels: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
+# fsGroup: 2000
 
 shim:
+  envs: []
+  #  envs:
+  #    - name: FOO
+  #      valueFrom:
+  #        secretKeyRef:
+  #          key: FOO
+  #          name: secret-resource
+  #    - name: BAR
+  #      value: 42
+
   image:
     repository: text-extr-shim
     tag: ""
@@ -43,6 +53,16 @@ shim:
   volumeMounts: []
 
 main:
+  envs: []
+#  envs:
+#    - name: FOO
+#      valueFrom:
+#        secretKeyRef:
+#          key: FOO
+#          name: secret-resource
+#    - name: BAR
+#      value: 42
+
   image:
     repository: tika
     tag: ""
@@ -63,8 +83,8 @@ securityContext: {}
   #   drop:
   #   - ALL
   # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+# runAsNonRoot: true
+# runAsUser: 1000
 
 service:
   type: ClusterIP
@@ -74,8 +94,8 @@ ingress:
   enabled: false
   className: ""
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/tls-acme: "true"
   hosts:
     - host: chart-example.local
       paths:
