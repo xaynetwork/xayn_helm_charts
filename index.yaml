@@ -3,9 +3,9 @@ entries:
   base-gcp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-30T11:47:41.728298471Z"
+    created: "2024-06-06T08:30:53.120180282Z"
     description: A base helm with some gcp features
-    digest: 7f0d118983aaab5d69e5a62d8c673d59c3c3d3cc8badbe986b390676a5c937aa
+    digest: 67b35680d75f1423fe7192908fe572c3078bc674e061b122ed4c26210a6c76f1
     name: base-gcp
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   base-otc:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-30T11:47:41.728585356Z"
+    created: "2024-06-06T08:30:53.120495021Z"
     description: A Helm chart for deploying in the OTC cloud
-    digest: 48c9ff632a2814dde13123fdf2cbd97429878d4c3294d74e32d16f98ca117f9f
+    digest: c13ce53047940adf5333463c640f9a08ca5adb5619422fe71a67cc6232500fa3
     name: base-otc
     type: application
     urls:
@@ -25,24 +25,35 @@ entries:
   quick-docker:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-05-30T11:47:41.728820876Z"
+    created: "2024-06-06T08:30:53.12069734Z"
     description: Creates all the config files for deploying a simple docker container
       to the provided cluster
-    digest: 31a2bc5662e365fd382d3ca5b25c559c2066c3b106838e4ae82514ae7ca4afcc
+    digest: 25fa7f05897bb0d9178656cd390b2492beb01a0d79d58de3b5f08f0a4c1f6217
     name: quick-docker
     type: application
     urls:
     - quick-docker-0.1.1.tgz
     version: 0.1.1
+  shim-base:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-06T08:30:53.12104392Z"
+    description: Application with a shim in front
+    digest: f107972c5b116dfefc864e2c41fdd9fa60a669273d2cc9ef1d4da51c9c413e2a
+    name: shim-base
+    type: application
+    urls:
+    - shim-base-0.1.0.tgz
+    version: 0.1.0
   vllm-otc:
   - apiVersion: v2
     appVersion: v0.4.0.post1
-    created: "2024-05-30T11:47:41.729266428Z"
+    created: "2024-06-06T08:30:53.121369559Z"
     description: A Helm chart for vLLM in OTC
-    digest: aa6722a45956095fc45c7ae7508c4ff7a241c6a7e17289205d5cb56fa6ae2029
+    digest: 1d7b76bec59942924117319a331813f233325035f0f7c7aba0e9ae3a5fac062d
     name: vllm-otc
     type: application
     urls:
     - vllm-otc-0.3.1.tgz
     version: 0.3.1
-generated: "2024-05-30T11:47:41.727836438Z"
+generated: "2024-06-06T08:30:53.119643467Z"
