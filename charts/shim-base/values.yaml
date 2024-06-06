@@ -29,8 +29,8 @@ podSecurityContext: {}
 # fsGroup: 2000
 
 shim:
-  envs: []
-  #  envs:
+  env: []
+  #  env:
   #    - name: FOO
   #      valueFrom:
   #        secretKeyRef:
@@ -53,8 +53,8 @@ shim:
   volumeMounts: []
 
 main:
-  envs: []
-#  envs:
+  env: []
+#  env:
 #    - name: FOO
 #      valueFrom:
 #        secretKeyRef:

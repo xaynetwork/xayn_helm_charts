@@ -3,9 +3,9 @@ entries:
   base-gcp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-06T09:03:11.016692845Z"
+    created: "2024-06-06T12:00:43.164326127Z"
     description: A base helm with some gcp features
-    digest: eeddd569c27aedf3c3d62108efbb402b30eb9affd7d378ac36b338bd7c985e83
+    digest: 1910038b879a07daae61af920e2db5b3b93cf3663e8d0f90049b7c9b73d13e94
     name: base-gcp
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   base-otc:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-06T09:03:11.016998194Z"
+    created: "2024-06-06T12:00:43.164635813Z"
     description: A Helm chart for deploying in the OTC cloud
-    digest: ad09213996fc2501d482b62eae01a582cdf51a54ce206c083ce5bca8c7a20fc0
+    digest: 5f40325b04058a86bc7dc5f691454894732fab0d0d96743d5c0c9b48cb174799
     name: base-otc
     type: application
     urls:
@@ -25,10 +25,10 @@ entries:
   quick-docker:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-06T09:03:11.017209979Z"
+    created: "2024-06-06T12:00:43.164866002Z"
     description: Creates all the config files for deploying a simple docker container
       to the provided cluster
-    digest: 4b6b6260e6b761d4da312664ec56f7ebda0557f7a73c9587de28e1f26bc8f347
+    digest: 4480e8ae2972289631af5ef0cb5c80f18bf213c841ab7cd08940d3890965b138
     name: quick-docker
     type: application
     urls:
@@ -37,23 +37,23 @@ entries:
   shim-base:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-06T09:03:11.017573487Z"
+    created: "2024-06-06T12:00:43.165253162Z"
     description: Application with a shim in front
-    digest: 9c7c8d9df5342e3bca870b16bf7af15951327504d6c7cd29cf4b9bc954ba17e1
+    digest: e766e2c6ed09db8ed6c6f8672bdf19b9f7cbca0b6186c7f9ceba56ef6766df97
     name: shim-base
     type: application
     urls:
-    - shim-base-0.2.0.tgz
-    version: 0.2.0
+    - shim-base-0.3.0.tgz
+    version: 0.3.0
   vllm-otc:
   - apiVersion: v2
     appVersion: v0.4.0.post1
-    created: "2024-06-06T09:03:11.017903002Z"
+    created: "2024-06-06T12:00:43.165571825Z"
     description: A Helm chart for vLLM in OTC
-    digest: 890ad3af433cb94458aac6c9f897b152a8a6b50167fe0106af82af30168773a0
+    digest: 27aebec50d469884a0cbc46bb88c25d13d62cd4977c84f757f67cf4cddd41abd
     name: vllm-otc
     type: application
     urls:
     - vllm-otc-0.3.1.tgz
     version: 0.3.1
-generated: "2024-06-06T09:03:11.016206487Z"
+generated: "2024-06-06T12:00:43.163831276Z"
