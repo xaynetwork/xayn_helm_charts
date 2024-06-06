@@ -33,7 +33,7 @@ spec:
       containers:
         - name: main
           env:
-            {{- toYaml .Values.main.envs | nindent 12 }}
+            {{- toYaml .Values.main.env | nindent 12 }}
           securityContext:
             {{- toYaml .Values.main.securityContext | nindent 12 }}
           image: "{{ .Values.main.image.repository }}:{{ .Values.main.image.tag | default .Chart.AppVersion }}"
@@ -54,7 +54,7 @@ spec:
           {{- end }}
         - name: shim
           env:
-            {{- toYaml .Values.shim.envs | nindent 12 }}
+            {{- toYaml .Values.shim.env | nindent 12 }}
           securityContext:
             {{- toYaml .Values.shim.securityContext | nindent 12 }}
           image: "{{ .Values.shim.image.repository }}:{{ .Values.shim.image.tag }}"
