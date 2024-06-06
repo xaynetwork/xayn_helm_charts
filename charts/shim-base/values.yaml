@@ -42,7 +42,7 @@ shim:
 
   volumeMounts: []
 
-tika:
+main:
   image:
     repository: tika
     tag: ""

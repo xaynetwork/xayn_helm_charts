@@ -31,22 +31,22 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: tika
+        - name: main
           securityContext:
-            {{- toYaml .Values.tika.securityContext | nindent 12 }}
-          image: "{{ .Values.tika.image.repository }}:{{ .Values.tika.image.tag | default .Chart.AppVersion }}"
+            {{- toYaml .Values.main.securityContext | nindent 12 }}
+          image: "{{ .Values.main.image.repository }}:{{ .Values.main.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: tika
-              containerPort: {{ .Values.tika.port }}
+            - name: main
+              containerPort: {{ .Values.main.port }}
               protocol: TCP
           livenessProbe:
-            {{- toYaml .Values.tika.livenessProbe | nindent 12 }}
+            {{- toYaml .Values.main.livenessProbe | nindent 12 }}
           readinessProbe:
-            {{- toYaml .Values.tika.readinessProbe | nindent 12 }}
+            {{- toYaml .Values.main.readinessProbe | nindent 12 }}
           resources:
-            {{- toYaml .Values.tika.resources | nindent 12 }}
-          {{- with .Values.tika.volumeMounts }}
+            {{- toYaml .Values.main.resources | nindent 12 }}
+          {{- with .Values.main.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}

@@ -1,6 +1,6 @@
 apiVersion: v2
-name: text-extractor
-description: Apache Tika with a shim in front
+name: shim-base
+description: Application with a shim in front
 
 # A chart can be either an 'application' or a 'library' chart.
 #
