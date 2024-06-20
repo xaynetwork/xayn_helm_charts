@@ -23,7 +23,10 @@ jobs:
       - name: Lint 
         working-directory: charts
         run: helm lint *
-      
+
+      - name: Restore archived charts
+        run: cp archive/*.tgz . 
+
       - name: Package
         run: helm package charts/*
       
