@@ -3,9 +3,9 @@ entries:
   base-gcp:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-20T11:53:33.282271433Z"
+    created: "2025-04-25T12:05:00.069794327Z"
     description: A base helm with some gcp features
-    digest: f91890a53737d95d5d57a13c709ba6ffb9d4b5d3665b7f19e647e0871c30db87
+    digest: aaab5f5a60bb57e2c2f12fdb2d0890de7ce1fe0347f81d786624a6277376d0dc
     name: base-gcp
     type: application
     urls:
@@ -14,17 +14,17 @@ entries:
   base-otc:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-20T11:53:33.283539462Z"
+    created: "2025-04-25T12:05:00.070483453Z"
     description: A Helm chart for deploying in the OTC cloud
-    digest: 83226a7ca980f3c8d77ef0f87906b85e944983fea8f7f3287ec8a0ce0040940a
+    digest: 73a583fd4600189edb356423cda091e7d6b53c1d305b7f206a7dc5da037a630e
     name: base-otc
     type: application
     urls:
-    - base-otc-0.2.0.tgz
-    version: 0.2.0
+    - base-otc-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-20T11:53:33.282900513Z"
+    created: "2025-04-25T12:05:00.070142056Z"
     description: A Helm chart for deploying in the OTC cloud
     digest: 66958d9d83aa4095fd3df72bf53534dad426be3d4c7fa7b750d688818c021865
     name: base-otc
@@ -34,7 +34,7 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-20T11:53:33.284947218Z"
+    created: "2025-04-25T12:05:00.07177271Z"
     description: A Helm chart for deploying in the OTC cloud
     digest: 66958d9d83aa4095fd3df72bf53534dad426be3d4c7fa7b750d688818c021865
     name: base-otc
@@ -45,10 +45,10 @@ entries:
   quick-docker:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-06-20T11:53:33.283931288Z"
+    created: "2025-04-25T12:05:00.07072823Z"
     description: Creates all the config files for deploying a simple docker container
       to the provided cluster
-    digest: fb0be78bab80350c58731582c804d94f68f222f196546193f370ab19a005d35e
+    digest: d52256b4bf4940788e53c2291017ebfb2fa86ddbbe14cbed82f6026b8aa576e3
     name: quick-docker
     type: application
     urls:
@@ -57,9 +57,9 @@ entries:
   shim-base:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-20T11:53:33.284331232Z"
+    created: "2025-04-25T12:05:00.071120483Z"
     description: Application with a shim in front
-    digest: 9bf039679369ca2ff303fdb89e39fb50dd7d0a1f8e0e74cd8d1f7e1179ee54a0
+    digest: 59b845ebf00212e2de9cc82b4f5d20b946f32416e252acab4c4278adfa23d1f2
     name: shim-base
     type: application
     urls:
@@ -68,12 +68,12 @@ entries:
   vllm-otc:
   - apiVersion: v2
     appVersion: v0.4.0.post1
-    created: "2024-06-20T11:53:33.284662568Z"
+    created: "2025-04-25T12:05:00.07146213Z"
     description: A Helm chart for vLLM in OTC
-    digest: 6e2823af2738688a29aca0609c6211e5f2624d23135deade7123c67e3f2f7acf
+    digest: 0181122e218588e5d4d2605e74f32332bd421300d05fe69717fcc0c88ececa3a
     name: vllm-otc
     type: application
     urls:
     - vllm-otc-0.3.1.tgz
     version: 0.3.1
-generated: "2024-06-20T11:53:33.281808832Z"
+generated: "2025-04-25T12:05:00.069227919Z"
